@@ -160,3 +160,5 @@ $RECYCLE.BIN/
 *.sln
 *.stamp
 *.depend
+/CMakeCache.txt
+/CMakeFiles
