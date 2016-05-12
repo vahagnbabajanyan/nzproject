@@ -8,4 +8,8 @@ int main()
 	cormen::sorting::merge_sort(0, static_cast<std::uint32_t>(v.size() - 1), v);
 
 	std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
+
+	std::cout << "------------------------------------" << std::endl;
+
+	cormen::execrises::chapter_2::Paragraf3::Ex3_2();
 }
