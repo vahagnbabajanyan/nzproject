@@ -21,9 +21,10 @@ namespace
 			int ic = -1;
 			int ec = -2;
 
-			for (int k = b; k <= e; ++k)
+			int k = b;
+			for (k = b; k <= e; ++k)
 			{
-				if (li <= m - b + 1 && ri <= e - b)
+				if (li <= m - b && ri <= e - m - 1)
 				{
 					if (leftc[li] < rightc[ri])
 					{
@@ -36,31 +37,64 @@ namespace
 						++ri;
 					}
 				}
-				else if (li <= m - b + 1)
+				else if (li <= m - b)
 				{
-					cp = &rightc;
-					ic = ri;
-					ec = m - b + 1;
+					cp = &leftc;
+					ic = li;
 					break;
 				}
 				else
 				{
-					cp = &leftc;
-					ic = li;
-					ec = e - m;
+					cp = &rightc;
+					ic = ri;
 					break;
 				}
 			}
-			for (int k = ic; k <= ec; ++k)
+			for (; k <= e; ++k)
 			{
+				auto z = (*cp)[ic];
 				c[k] = (*cp)[ic];
+				++ic;
+			}
+		}
+
+		// http://clrs.skanev.com/ solution
+		template<typename Container>
+		void merge_2(int p, int q, int r, Container& c)
+		{
+			int i, j, k;
+
+			int n1 = q - p + 1;
+			int n2 = r - q;
+
+			int L[n1];
+			int R[n2];
+
+			for (i = 0; i < n1; i++)
+				L[i] = c[p + i];
+			for (j = 0; j < n2; j++)
+				R[j] = c[q + j + 1];
+
+			for (i = 0, j = 0, k = p; k <= r; k++) {
+				if (i == n1) {
+					c[k] = R[j++];
+				}
+				else if (j == n2) {
+					c[k] = L[i++];
+				}
+				else if (L[i] <= R[j]) {
+					c[k] = L[i++];
+				}
+				else {
+					c[k] = R[j++];
+				}
 			}
 		}
 
 		template <typename Container>
 		void merge_sort(std::int32_t beg, std::int32_t end, Container& c)
 		{
-			if (beg >= end)
+			if (beg < end)
 			{
 				auto mid = (beg + end) / 2;
 				merge_sort(beg, mid, c);
@@ -81,14 +115,20 @@ namespace cormen
 
 		namespace chapter_2
 		{
-			
+			/*
+			* merge sort with no sentinel
+			*/
 			void Paragraf3::Ex3_2()
 			{
 				std::vector<int> v = { 1, 4, 3, 7, 2, 9, 6, 3, 8, 5, 1, 5, 3, 7, 8 };
-				
-				ex3_2::merge_sort(0, v.size() - 1, v);
 
 				std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
+				std::cout << std::endl;
+				
+				ex3_2::merge_sort(0, static_cast<int>(v.size()) - 1, v);
+
+				std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
+				std::cout << std::endl;
 			}
 
 		} //namespace chapter_2
