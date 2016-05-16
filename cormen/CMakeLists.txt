@@ -4,14 +4,16 @@ project (CormenLib)
 
 set (HEADER_FILES
   stdafx.h
-  Utilities.h
+  Searching.h
   Sorting.h
+  Utilities.h
   ExercisesChapter_2.h
 )
 
 set (SOURCE_FILES
   stdafx.cpp
   main.cpp
+  Searching.cpp
   Sorting.cpp
   ExercisesChapter_2.cpp
 )
