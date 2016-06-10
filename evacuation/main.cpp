@@ -4,10 +4,10 @@ int main()
 {
 	std::vector<int> v = {1, 4, 7, 2, 9, 3, 7, 3, 8, 4, 1};
 
-	cormen::sorting::merge_sort(0, v.size() - 1, v);
+	cormen::sorting::insertion_sort(v);
 
-	auto result = cormen::searching::binary_search(v.begin(), v.end(), 4);
+	std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
 
-	std::cout << *result << std::endl;
+	std::cout << std::endl;
 
 }

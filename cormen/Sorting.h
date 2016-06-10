@@ -11,6 +11,33 @@ namespace cormen
 	{
 
 		/*
+		* ---------- Insertion Sort : Begin ----------------
+		*/
+		template <typename Container>
+		void insertion_sort(Container& c)
+		{
+			for (int i = 1; i < c.size(); ++i)
+			{
+				int key = c[i];
+				int j = i - 1;
+
+				while (j >= 0 && key < c[j])
+				{
+					c[j + 1] = c[j];
+					--j;
+				}
+				c[j + 1] = key;
+			}
+		}
+		/*
+		* ---------- Insertion Sort : end ------------------
+		*/
+
+
+
+
+
+		/*
 		*  ----------- Merge Sort : Begin ------------------
 		*/
 		template <typename Container>
@@ -57,6 +84,11 @@ namespace cormen
 		/*
 		* ----------- Merge Sort : End ----------------------
 		*/
+
+
+
+
+
 
 	} // namespace sorting
 
