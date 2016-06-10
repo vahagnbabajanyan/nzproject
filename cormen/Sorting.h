@@ -11,6 +11,34 @@ namespace cormen
 	{
 
 		/*
+		* ---------- Bubble Sort : Begin ----------------
+		*/
+
+		template <typename Container>
+		void bubble_sort(Container& c)
+		{
+			auto size = c.size();
+
+			for (std::uint32_t i = 0; i < size - 1; ++i)
+			{
+				for (std::uint32_t j = 0; j < size - 1 - i; ++j)
+				{
+					if (c[j] > c[j + 1])
+					{
+						typename Container::value_type tmp = c[j];
+						c[j] = c[j + 1];
+						c[j + 1] = tmp;
+					}
+				}
+			}
+		}
+
+		/*
+		* -----------  Bubble Sort : End ----------------
+		*/
+
+
+		/*
 		* ---------- Insertion Sort : Begin ----------------
 		*/
 		template <typename Container>
