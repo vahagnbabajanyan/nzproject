@@ -2,12 +2,15 @@
 
 int main()
 {
-	std::vector<int> v = {1, 4, 7, 2, 9, 3, 7, 3, 8, 4, 1};
-
-	cormen::sorting::bubble_sort(v);
-
-	std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
-
-	std::cout << std::endl;
+	std::vector<int> coefficients = {2, 4, 5, 1};
+	int x = 3;
+	if (cormen::problems::polynomial_naive_calculation(coefficients, x) == cormen::problems::polynomial_horners_calculation(coefficients, x))
+	{
+		std::cout << "OK" << std::endl;
+	}
+	else
+	{
+		std::cout << "DUMMY" << std::endl;
+	}
 
 }
