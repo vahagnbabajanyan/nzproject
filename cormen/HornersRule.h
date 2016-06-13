@@ -8,7 +8,7 @@ namespace cormen
 
 	namespace problems
 	{
-		// Horner's rule polynomial evaluation. Worst case TETTA(n)
+		// Horner's rule polynomial evaluation. Worst case O(n)
 		int polynomial_horners_calculation(const std::vector<int>& coefficients, int x)
 		{
 			int result = 0;
@@ -20,7 +20,7 @@ namespace cormen
 			return result;
 		}
 
-		// Naive polynomial evaluation worst case TETTA(n * n)
+		// Naive polynomial evaluation worst case O(n * n)
 		int polynomial_naive_calculation(const std::vector<int>& coefficients, int x)
 		{
 			int result = 0;
