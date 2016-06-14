@@ -2,15 +2,17 @@
 
 int main()
 {
-	std::vector<int> coefficients = {2, 4, 5, 1};
-	int x = 3;
-	if (cormen::problems::polynomial_naive_calculation(coefficients, x) == cormen::problems::polynomial_horners_calculation(coefficients, x))
 	{
-		std::cout << "OK" << std::endl;
-	}
-	else
-	{
-		std::cout << "DUMMY" << std::endl;
+		std::vector<int> v = { 12, 5, 8, 1, 6, 4, 25, 3, 35, 14, 7, 9 };
+		std::uint32_t inversions = 0;
+		cormen::problems::chapter_2::naive_calculate_inversions(v, inversions);
+		std::cout << "naive : " << inversions << std::endl;
 	}
 
+	{
+		std::vector<int> v = { 12, 5, 8, 1, 6, 4, 25, 3, 35, 14, 7, 9 };
+		std::uint32_t inversions = 0;
+		cormen::problems::chapter_2::calculate_inversions(v, 0, static_cast<std::uint32_t>(v.size() - 1), inversions);
+		std::cout << inversions << std::endl;
+	}
 }

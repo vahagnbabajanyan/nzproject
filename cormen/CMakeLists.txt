@@ -4,10 +4,12 @@ project (CormenLib)
 
 set (HEADER_FILES
   stdafx.h
+  HornersRule.h
   Searching.h
   Sorting.h
   Utilities.h
   ExercisesChapter_2.h
+  ProblemsChapter_2.h
 )
 
 set (SOURCE_FILES
