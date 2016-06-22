@@ -11,3 +11,7 @@
 #include <cormen/ExercisesChapter_2.h>
 
 #include <cormen/ProblemsChapter_2.h>
+
+
+// boost tutorials lib
+#include <boost_tutorials/FormatTutorial.h>

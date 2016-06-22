@@ -58,11 +58,13 @@ endif ()
 
 set (HEADER_FILES
   stdafx.h
+  FormatTutorial.h
 )
 
 set (SOURCE_FILES
   stdafx.cpp
   main.cpp
+  FormatTutorial.cpp
 )
 
 

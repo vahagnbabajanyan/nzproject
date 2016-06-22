@@ -19,7 +19,8 @@ add_executable (runner ${HEADER_FILES} ${SOURCE_FILES} )
 set_property (TARGET runner PROPERTY FOLDER "runner")
 
 target_link_libraries (runner 
-  CormenLib 
+  CormenLib
+  BoostTutorialsLib
 )
 
 #use_precompiled_header (Platform stdafx.h stdafx.cpp SOURCE_FILES)
