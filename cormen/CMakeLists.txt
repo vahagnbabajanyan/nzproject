@@ -9,6 +9,7 @@ set (HEADER_FILES
   Sorting.h
   Utilities.h
   ExercisesChapter_2.h
+  ProblemsChapter_2.h
 )
 
 set (SOURCE_FILES

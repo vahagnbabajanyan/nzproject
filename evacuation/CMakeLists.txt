@@ -19,6 +19,7 @@ add_executable (runner ${HEADER_FILES} ${SOURCE_FILES} )
 set_property (TARGET runner PROPERTY FOLDER "runner")
 
 target_link_libraries (runner 
+  BoostTutorialsLib
   CormenLib 
   ConcurrencyLib
 )

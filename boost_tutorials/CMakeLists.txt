@@ -59,11 +59,13 @@ endif ()
 set (HEADER_FILES
 	DateTime.h
 	stdafx.h
+    FormatTutorial.h
 )
 
 set (SOURCE_FILES
   stdafx.cpp
   main.cpp
+  FormatTutorial.cpp
 )
 
 
