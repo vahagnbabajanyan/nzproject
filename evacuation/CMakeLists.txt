@@ -20,6 +20,7 @@ set_property (TARGET runner PROPERTY FOLDER "runner")
 
 target_link_libraries (runner 
   CormenLib 
+  ConcurrencyLib
 )
 
 #use_precompiled_header (Platform stdafx.h stdafx.cpp SOURCE_FILES)

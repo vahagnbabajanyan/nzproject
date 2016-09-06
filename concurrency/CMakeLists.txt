@@ -3,11 +3,13 @@ cmake_minimum_required (VERSION 3.4)
 project (ConcurrencyLib)
 
 set (HEADER_FILES
-  stdafx.h
+	Basics.h
+	stdafx.h
 )
 
 set (SOURCE_FILES
   stdafx.cpp
+  Basics.cpp
   main.cpp
 )
 

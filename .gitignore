@@ -162,3 +162,4 @@ $RECYCLE.BIN/
 *.depend
 /CMakeCache.txt
 /CMakeFiles
+/evacuation/runner.VC.db

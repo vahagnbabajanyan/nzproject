@@ -4,6 +4,7 @@ project (CormenLib)
 
 set (HEADER_FILES
   stdafx.h
+  HornersRule.h
   Searching.h
   Sorting.h
   Utilities.h

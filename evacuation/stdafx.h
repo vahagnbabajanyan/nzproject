@@ -8,3 +8,6 @@
 #include <cormen/Searching.h>
 #include <cormen/Sorting.h>
 #include <cormen/ExercisesChapter_2.h>
+
+// Concurrency lib
+#include <concurrency\Basics.h>

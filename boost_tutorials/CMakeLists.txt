@@ -57,7 +57,8 @@ endif ()
 
 
 set (HEADER_FILES
-  stdafx.h
+	DateTime.h
+	stdafx.h
 )
 
 set (SOURCE_FILES
