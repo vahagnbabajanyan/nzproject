@@ -7,6 +7,13 @@ namespace cormen
 	namespace utilities
 	{
 
+		template <typename Cont>
+		Cont rndCreateCont()
+		{
+			Cont cont;
+			return cont;
+		}
+
 	} // namespace utilities
 
 } // namespace utilities
