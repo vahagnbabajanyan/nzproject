@@ -8,6 +8,7 @@ void runner(std::function<void()> func)
 
 int main()
 {
+	// std::cout << "Tests Change" << std::endl;
 	concurrency::basics::launching_threads();
 
 }
