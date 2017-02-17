@@ -10,11 +10,11 @@ namespace boost_tutorial
 
 		void tutorial_one()
 		{
-			//auto format = boost::format("%|-|%|20|%|20|");
-			//
-			//format % "Hello" % 15 % 30;
-			//
-			//std::cout << format.str() << std::endl;
+			auto format = boost::format("%|-|%|20|%|20|");
+			
+			format % "Hello" % 15 % 30;
+			
+			std::cout << format.str() << std::endl;
 		}
 
 	} // format_tutorial

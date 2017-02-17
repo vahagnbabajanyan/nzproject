@@ -2,60 +2,6 @@ cmake_minimum_required (VERSION 3.4)
 
 project (BoostTutorialsLib)
 
-
-
-#-------------------------------------------------------
-
-## Platform
-if (MSVC)
-  if (CMAKE_CL_64)
-    set (NZ_PLATFORM x64)
-  else ()
-    set (NZ_PLATFORM win32)
-  endif ()
-else ()
-  set (NZ_PLATFORM macrohard)
-endif ()
-
-## Compiler
-if (MSVC14)
-  set (ZN_COMPILER msvc-14.0)
-elseif (MSVC12)
-  set (ZN_COMPILER msvc-12.0)
-elseif (MSVC11)
-  set (ZN_COMPILER msvc-11.0)
-elseif (MSVC10)
-  set (ZN_COMPILER msvc-10.0)
-elseif (MSVC90)
-  set (ZN_COMPILER msvc-9.0)
-endif ()
-
-#-------------------------------------------------------
-
-
-set (DEV_ROOT "C:/DEV")
-
-
-if (MSVC)
-	set (DEFAULT_BOOST_VERSION 1.63.0)
-
-	if (NOT DEFINED BOOST_VERSION)
-		set (BOOST_VERSION ${DEFAULT_BOOST_VERSION})
-	endif()
-
-	set (BOOST_DIR ${DEV_ROOT}/Boost/${BOOST_VERSION})
-	set (BOOST_INCLUDE ${BOOST_DIR}/include)
-	set (BOOST_LIB ${BOOST_DIR}/lib/${NZ_COMPILER}/${NZ_PLATFORM})
-	
-	set (BOOST_LIBRARY_SUFFIX -vc110-mt-1_63)
-	set (BOOST_LIBRARY_DEBUG_SUFFIX -vc110-mt-gd-1_63)
-endif ()
-
-#-------------------------------------------------------
-
-
-
-
 set (HEADER_FILES
 	DateTime.h
 	stdafx.h
