@@ -4,6 +4,7 @@ project (StroustrupLib)
 
 set (HEADER_FILES
   stdafx.h
+  ch_2_3_1.hpp
 )
 
 set (SOURCE_FILES
