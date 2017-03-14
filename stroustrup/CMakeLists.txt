@@ -5,11 +5,16 @@ project (StroustrupLib)
 set (HEADER_FILES
   stdafx.h
   ch_2_3_1.hpp
+  ch_3_2_1_1.hpp
+  Vector.hpp
+  Shapes.hpp
 )
 
 set (SOURCE_FILES
   stdafx.cpp
   main.cpp
+  Vector.cpp
+  Shapes.cpp
 )
 
 
