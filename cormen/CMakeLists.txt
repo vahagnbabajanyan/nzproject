@@ -10,6 +10,7 @@ set (HEADER_FILES
   Utilities.h
   ExercisesChapter_2.h
   ProblemsChapter_2.h
+  ExCh2.hpp
 )
 
 set (SOURCE_FILES
@@ -18,6 +19,7 @@ set (SOURCE_FILES
   Searching.cpp
   Sorting.cpp
   ExercisesChapter_2.cpp
+  ExCh2.cpp
 )
 
 

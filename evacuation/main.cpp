@@ -4,6 +4,7 @@
 #include <typeinfo>
 
 #include <stroustrup/ch_2_3_1.hpp>
+#include <cormen/ExCh2.hpp>
 
 void runner(std::function<void()> func)
 {
@@ -32,22 +33,44 @@ std::ostream& operator<<(std::ostream& os, const test& obj)
 	return os << obj._memb;
 }
 
+template <int N>
+void print(const std::array<bool, N>& arr)
+{
+	for (auto v: arr)
+	{
+		std::cout << v;
+	}
+	std::cout << std::endl;
+}
+
 
 int main()
 {
-	// std::cout << "Tests Change" << std::endl;
-	//concurrency::basics::launching_threads();
-	//boost_tutorial::date_time::test_ptime_creations();
+	{
+		std::array<bool, 1> a1 = { 1 };
+		std::array<bool, 1> a2 = { 1 };
+		auto c = cormen::execrises::chapter_2::Adding_N_BIT_Numbers::sum(a1, a2);
+		print(a1);
+		print(a2);
+		print(c);
+	}
 
-	//stroustrup::chapter2::a2_3_1::read_and_sum(10);
-	auto list = {1, 2};
+	{
+		std::array<bool, 2> a1 = { 0, 1 };
+		std::array<bool, 2> a2 = { 1, 0 };
+		auto c = cormen::execrises::chapter_2::Adding_N_BIT_Numbers::sum(a1, a2);
+		print(a1);
+		print(a2);
+		print(c);
+	}
 
-	std::cout << typeid(list).name() << std::endl;
-
-	std::cout << sizeof(double*) << " " << sizeof(int*) << " " << sizeof(int) << " " << sizeof(char) << std::endl;
-
-	test x(10);
-	(x += test(10)) += test(100);
-	std::cout << x << std::endl;
+	{
+		std::array<bool, 3> a1 = { 1, 0, 1 };
+		std::array<bool, 3> a2 = { 1, 0, 1 }; //        1010
+		auto c = cormen::execrises::chapter_2::Adding_N_BIT_Numbers::sum(a1, a2);
+		print(a1);
+		print(a2);
+		print(c);
+	}
 
 }
