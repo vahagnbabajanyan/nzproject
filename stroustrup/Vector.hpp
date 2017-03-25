@@ -12,7 +12,15 @@ namespace stroustrup
 		class Vector
 		{
 		public:
+			explicit Vector(int size);
 			Vector(std::initializer_list<double>);
+
+			Vector(const Vector& other);
+			Vector& operator=(const Vector& other);
+
+			// && means rvalue reference
+			Vector(Vector&& other);
+			Vector& operator=(Vector&& other);
 
 			void push_back(double);
 
