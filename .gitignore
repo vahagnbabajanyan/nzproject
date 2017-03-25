@@ -57,6 +57,7 @@ ipch/
 # Visual Studio db files
 *.VC.opendb
 *.VC.db
+*.db
 
 # Visual Studio profiler
 *.psess
