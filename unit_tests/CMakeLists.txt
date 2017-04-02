@@ -10,6 +10,7 @@ set (HEADER_FILES
 set (SOURCE_FILES
   stdafx.cpp
   main.cpp
+  CormenSortingTests.cpp
 )
 
 
@@ -20,12 +21,13 @@ add_executable (UnitTests ${HEADER_FILES} ${SOURCE_FILES})
 
 # extract_debug_information (UnitTests)
 
-include_directories ("${PROJECT_SOURCE_DIR}")
+# include_directories ("${PROJECT_SOURCE_DIR}")
+include_directories ( "${CMAKE_CURRENT_BINARY_DIR}/.." )
 
 set_property (TARGET UnitTests PROPERTY FOLDER "unit_tests")
 
 target_link_libraries (UnitTests 
-  # lib names
+  CormenLib
   ${lib_boost_unit_test_framework}
   ${lib_boost_system} 
   ${lib_boost_thread} 
