@@ -72,22 +72,22 @@ namespace cormen
 		template <typename Container>
 		void merge(Container& cont, int p, int q, int r)
 		{
-			int nl = p - q + 1;
+			int nl = q - p + 1;
 			int nr = r - q;
 			Container left(nl + 1);
 			Container right(nr + 1);
 
-			for (int i = 0; i < nl - 1; ++i)
+			for (int i = 0; i < nl; ++i)
 			{
 				left[i] = cont[p + i];
 			}
-			left[nl - 1] = std::numeric_limits<typename Container::value_type>::max();
+			left[nl] = std::numeric_limits<typename Container::value_type>::max();
 
-			for(int i = 0; i < nr - 1; ++i)
+			for(int i = 0; i < nr; ++i)
 			{
 				right[i] = cont[q + 1 + i];
 			}
-			right[nr - 1] = std::numeric_limits<typename Container::value_type>::max();
+			right[nr] = std::numeric_limits<typename Container::value_type>::max();
 
 			int indx_l = 0;
 			int indx_r = 0;
@@ -123,6 +123,67 @@ namespace cormen
 			}
 		}
 
+
+		template <typename Container>
+		void merge_no_sentinels(Container& cont, int p, int q, int r)
+		{
+			int nl = q - p + 1;
+			int nr = r - q;
+			Container left(nl);
+			Container right(nr);
+
+			for (int i = 0; i < nl; ++i)
+			{
+				left[i] = cont[p + i];
+			}
+			for (int i = 0; i < nr; ++i)
+			{
+				right[i] = cont[q + 1 + i];
+			}
+
+			int indx_l = 0;
+			int indx_r = 0;
+			for (int i = p; i <= r; ++i)
+			{
+				if (indx_l >= nl)
+				{
+					cont[i] = right[indx_r];
+					++indx_r;
+				}
+				else if (indx_r >= nr)
+				{
+					cont[i] = left[indx_l];
+					++indx_l;
+				}
+				else if (left[indx_l] < right[indx_r])
+				{
+					cont[i] = left[indx_l];
+					++indx_l;
+				}
+				else
+				{
+					cont[i] = right[indx_r];
+					++indx_r;
+				}
+			}
+		}
+
+		/*
+		* !Container reference to be sort in place
+		* !int p begin of container
+		* !int r end of container
+		*/
+		template <typename Container>
+		void merge_sort_no_sentinels(Container& cont, int p, int r)
+		{
+			if (p < r)
+			{
+				int q = (p + r) / 2;
+				merge_sort_no_sentinels(cont, p, q);
+				merge_sort_no_sentinels(cont, q + 1, r);
+				merge_no_sentinels(cont, p, q, r);
+			}
+		}
 
 
 
