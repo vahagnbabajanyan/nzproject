@@ -11,6 +11,8 @@ set (SOURCE_FILES
   stdafx.cpp
   main.cpp
   CormenSortingTests.cpp
+  CormenSearchingTests.cpp
+  Chapter_2_ExTests.cpp
 )
 
 

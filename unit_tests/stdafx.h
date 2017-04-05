@@ -4,5 +4,7 @@
 #include <boost/test/unit_test.hpp>
 
 #include <cormen/Sorting.h>
+#include <cormen/Searching.h>
+#include <cormen/ExercisesChapter_2.h>
 
 #endif

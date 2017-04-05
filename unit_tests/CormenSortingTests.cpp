@@ -49,18 +49,14 @@ BOOST_AUTO_TEST_SUITE(CormenSortingTests)
 BOOST_AUTO_TEST_CASE(MergeSortTest)
 {
 	auto vec = createRandomVector(20);
-	print_vector(vec);
 	cormen::sorting::merge_sort(vec, 0, static_cast<int>(vec.size()) - 1);
-	print_vector(vec);
 	BOOST_REQUIRE_EQUAL(is_sorted(vec), true);
 }
 
 BOOST_AUTO_TEST_CASE(MergeSortTestWithoutSentinels)
 {
 	auto vec = createRandomVector(20);
-	print_vector(vec);
 	cormen::sorting::merge_sort_no_sentinels(vec, 0, static_cast<int>(vec.size()) - 1);
-	print_vector(vec);
 	BOOST_REQUIRE_EQUAL(is_sorted(vec), true);
 }
 

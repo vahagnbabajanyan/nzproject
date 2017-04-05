@@ -1,6 +1,8 @@
 #include "stdafx.h"
 
 #include "ExercisesChapter_2.h"
+#include "Sorting.h"
+#include "Searching.h"
 
 namespace
 {
@@ -129,6 +131,21 @@ namespace cormen
 
 				std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
 				std::cout << std::endl;
+			}
+
+			std::pair<int, int> ex_3_7(std::vector<int>& vec, int x)
+			{
+				cormen::sorting::merge_sort(vec, 0, vec.size() - 1);
+				for (int i = 0; i < vec.size(); ++i)
+				{
+					auto key = x - vec[i];
+					auto indx = cormen::searching::binary_search(vec, key);
+					if (indx != i && indx != -1)
+					{
+						return std::make_pair(i, indx);
+					}
+				}
+				return std::make_pair(-1, -1);
 			}
 
 		} //namespace chapter_2

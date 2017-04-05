@@ -17,6 +17,8 @@ namespace cormen
 
 			}; // class Paragraf3
 
+			std::pair<int, int> ex_3_7(std::vector<int>& vec, int x);
+
 		} // namespace chapter_2
 
 	} // namespace execrises

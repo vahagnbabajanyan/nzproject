@@ -17,25 +17,24 @@ namespace cormen
 		template <typename ForwardIterator, typename ValueType>
 		ForwardIterator binary_search(ForwardIterator begin, ForwardIterator end, const ValueType& value)
 		{
-			auto fail = end;
-			auto result = end;
+			auto mid = end;
 
 			while (begin < end)
 			{
-				result = begin + std::distance(begin, end) / 2;
-				if (*result == value) 
+				mid = begin + std::distance(begin, end) / 2;
+				if (*mid == value)
 				{
-					return result; 
+					return mid;
 				}
 				else
 				{
-					if (value > *result)
+					if (value > *mid)
 					{
-						begin = result;
+						begin = mid;
 					}
 					else
 					{
-						end = result; 
+						end = mid;
 					}
 				}
 			}
@@ -43,10 +42,28 @@ namespace cormen
 			return end;
 		}
 
-		template <typename Container>
-		typename Container::iterator binary_search(const Container& c, const typename Container::value_type& val)
+		template <typename Conteiner>
+		int binary_search(const Conteiner& cont, const typename Conteiner::value_type& key)
 		{
-			return nullptr;
+			int first = 0;
+			int last = static_cast<int>(cont.size() - 1);
+			while (first <= last)
+			{
+				auto mid = (first + last) / 2;
+				if (cont[mid] == key)
+				{
+					return mid;
+				}
+				if (cont[mid] < key)
+				{
+					first = mid + 1;
+				}
+				else
+				{
+					last = mid - 1;
+				}
+			}
+			return -1;
 		}
 		
 		/*
