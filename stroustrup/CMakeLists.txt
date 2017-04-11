@@ -8,6 +8,7 @@ set (HEADER_FILES
   ch_3_2_1_1.hpp
   Vector.hpp
   Shapes.hpp
+  Entry.hpp
 )
 
 set (SOURCE_FILES
@@ -15,6 +16,7 @@ set (SOURCE_FILES
   main.cpp
   Vector.cpp
   Shapes.cpp
+  Entry.cpp
 )
 
 
